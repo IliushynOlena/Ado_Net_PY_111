@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_connected_mode", "01_con
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02_Connected_Mode_CRUD", "02_Connected_Mode_CRUD\02_Connected_Mode_CRUD.csproj", "{2B63589E-C834-4432-A2AA-DD8B7572C769}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_wpf_client", "03_wpf_client\03_wpf_client.csproj", "{BE15DAB1-AC90-41BD-962A-F24076880C1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03_wpf_client", "03_wpf_client\03_wpf_client.csproj", "{BE15DAB1-AC90-41BD-962A-F24076880C1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "data_access", "data_access\data_access.csproj", "{6ECB9EFD-D177-46D1-AF0E-1747A2F3B764}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "data_access", "data_access\data_access.csproj", "{6ECB9EFD-D177-46D1-AF0E-1747A2F3B764}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_linqToSql", "04_linqToSql\04_linqToSql.csproj", "{8CB7F674-9E4A-4F29-A6EA-D169B4DD68BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{6ECB9EFD-D177-46D1-AF0E-1747A2F3B764}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ECB9EFD-D177-46D1-AF0E-1747A2F3B764}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ECB9EFD-D177-46D1-AF0E-1747A2F3B764}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CB7F674-9E4A-4F29-A6EA-D169B4DD68BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CB7F674-9E4A-4F29-A6EA-D169B4DD68BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CB7F674-9E4A-4F29-A6EA-D169B4DD68BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CB7F674-9E4A-4F29-A6EA-D169B4DD68BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
