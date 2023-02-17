@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "data_access", "data_access\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_linqToSql", "04_linqToSql\04_linqToSql.csproj", "{8CB7F674-9E4A-4F29-A6EA-D169B4DD68BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_EF_example", "05_EF_example\05_EF_example.csproj", "{C33C775D-1D4D-424C-A51E-BF4D3FDFC97B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{8CB7F674-9E4A-4F29-A6EA-D169B4DD68BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CB7F674-9E4A-4F29-A6EA-D169B4DD68BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CB7F674-9E4A-4F29-A6EA-D169B4DD68BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C33C775D-1D4D-424C-A51E-BF4D3FDFC97B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C33C775D-1D4D-424C-A51E-BF4D3FDFC97B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C33C775D-1D4D-424C-A51E-BF4D3FDFC97B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C33C775D-1D4D-424C-A51E-BF4D3FDFC97B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
