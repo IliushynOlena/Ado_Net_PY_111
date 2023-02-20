@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _05_EF_example.Entities;
+using System;
 using System.Linq;
 
 namespace _05_EF_example
@@ -28,7 +29,7 @@ namespace _05_EF_example
 
             foreach (var c in context.Clients)
             {
-                Console.WriteLine($"Client :{c.Id}  {c.Name}  {c.Email}  {c.Birthdate.ToShortDateString()}");
+                Console.WriteLine($"Client :{c.Id}  {c.Name}  {c.Email}  {c.Birthdate}");
             }
 
             var obj = context.Clients.Find(1);
@@ -40,7 +41,7 @@ namespace _05_EF_example
 
             foreach (var c in context.Clients)
             {
-                Console.WriteLine($"Client :{c.Id}  {c.Name}  {c.Email}  {c.Birthdate.ToShortDateString()}");
+                Console.WriteLine($"Client :{c.Id}  {c.Name}  {c.Email}  {c.Birthdate}");
             }
         }
     }
