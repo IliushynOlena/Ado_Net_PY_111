@@ -1,4 +1,5 @@
 ﻿using _05_EF_example.Entities;
+using _05_EF_example.Helpers;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
@@ -31,42 +32,8 @@ namespace _05_EF_example
         {
             base.OnModelCreating(modelBuilder);
             //Initialization - Seed
-          modelBuilder.Entity<Airplane>().HasData(new Airplane[]
-          {
-                new Airplane()
-                {
-                    Id = 1,
-                    Model = "Boeing 765",
-                    MaxPassangers = 1200
-                },
-                 new Airplane()
-                {
-                    Id = 2,
-                    Model = "Boeing 352",
-                    MaxPassangers = 1000
-                }
-          });
-            modelBuilder.Entity<Flight>().HasData(new Flight[]
-            {
-                new Flight()
-                {
-                    Number = 1,
-                    AirplaneId = 1,
-                    DepartureCity = "Kyiv",
-                    ArrivalCity = "Lviv",
-                    DepartureTime = new DateTime(2023,5,15),
-                    ArrivalTime = new DateTime(2023,5,16)
-                },
-                 new Flight()
-                {
-                    Number = 2,
-                    AirplaneId = 2,
-                    DepartureCity = "Warsaw",
-                    ArrivalCity = "Lviv",
-                    DepartureTime = new DateTime(2023,5,15),
-                    ArrivalTime = new DateTime(2023,5,16)
-                }
-            });
+            modelBuilder.SeedAirplanes();
+            modelBuilder.SeedFligths();
 
             //Fluent API configuratuins
             modelBuilder.Entity<Airplane>().Property(a => a.Model).
