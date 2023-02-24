@@ -17,9 +17,9 @@ namespace _05_EF_example.Entities
         //Foreign key : RelatedEntityName +  RelatedEntityPrimaryKeyName
         public int AirplaneId { get; set; }
         //Navigation properties
-        public Airplane Airplane { get; set; }//Reference
+        public Airplane Airplane { get; set; }
 
-        public ICollection<Client> Clients { get; set; }//Collection
+        public ICollection<Client> Clients { get; set; }
 
     }
 

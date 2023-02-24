@@ -12,7 +12,7 @@ namespace _05_EF_example.Entities
         public string Email { get; set; }
         public DateTime? Birthdate { get; set; }
         //Navigation properties
-        public ICollection<Flight> Flights { get; set; } //Collection
+        public ICollection<Flight> Flights { get; set; }
     }
 
 }

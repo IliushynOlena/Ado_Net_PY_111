@@ -23,7 +23,7 @@ namespace _05_EF_example
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-3HG9UVT\SQLEXPRESS;
             Initial Catalog = SuperAirplanesDbWithMigration;
-            Integrated Security=True;Connect Timeout=2;
+            Integrated Security=True;Connect Timeout=30;
             Encrypt=False;TrustServerCertificate=False;
             ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
@@ -63,8 +63,7 @@ namespace _05_EF_example
                 WithMany(a => a.Flights).
                 HasForeignKey(f=>f.AirplaneId);
 
-            modelBuilder.Entity<Flight>().HasMany(c => c.Clients).WithMany(c=>c.Flights);
-            //modelBuilder.Entity<Client>().HasMany(c => c.Flights).WithMany(f => f.Clients);
+            modelBuilder.Entity<Flight>().HasMany(c => c.Clients).WithMany(c=>c.Flights);   
 
         }
     }
