@@ -11,7 +11,8 @@ namespace _05_EF_example.Entities
         public DateTime ArrivalTime { get; set; }
         public string DepartureCity { get; set; }
         public string ArrivalCity { get; set; }
-        public int? Rating { get; set; }
+        
+        public int Rating { get; set; }
 
         //Relational Type : 
         //Foreign key : RelatedEntityName +  RelatedEntityPrimaryKeyName

@@ -10,11 +10,6 @@ namespace _05_EF_example
 {
     public class AirplanesDbContext : DbContext
     {
-        public AirplanesDbContext()
-        {
-            //this.Database.EnsureDeleted();
-            //this.Database.EnsureCreated();
-        }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Flight> Flights { get; set; }
         public DbSet<Airplane> Airpleins { get; set; }

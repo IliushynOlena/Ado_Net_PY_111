@@ -41,7 +41,8 @@ namespace _05_EF_example.Helpers
                     DepartureCity = "Kyiv",
                     ArrivalCity = "Lviv",
                     DepartureTime = new DateTime(2023,5,15),
-                    ArrivalTime = new DateTime(2023,5,16)
+                    ArrivalTime = new DateTime(2023,5,16),
+                    Rating = 10
                 },
                  new Flight()
                 {
