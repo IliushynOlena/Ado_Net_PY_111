@@ -1,5 +1,6 @@
 ﻿using _05_EF_example.Entities;
 using _05_EF_example.Helpers;
+using data_access_entity.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace _05_EF_example
         {
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-3HG9UVT\SQLEXPRESS;
-            Initial Catalog = SuperAirplanesDbWithMigration;
+            Initial Catalog = AirportDb;
             Integrated Security=True;Connect Timeout=2;
             Encrypt=False;TrustServerCertificate=False;
             ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
@@ -26,9 +27,7 @@ namespace _05_EF_example
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            //Initialization - Seed
-            modelBuilder.SeedAirplanes();
-            modelBuilder.SeedFligths();
+          
 
             //Fluent API configuratuins
             modelBuilder.Entity<Airplane>().Property(a => a.Model).
@@ -60,6 +59,15 @@ namespace _05_EF_example
 
             modelBuilder.Entity<Flight>().HasMany(c => c.Clients).WithMany(c=>c.Flights);
             //modelBuilder.Entity<Client>().HasMany(c => c.Flights).WithMany(f => f.Clients);
+
+            modelBuilder.Entity<Client>().HasOne(c => c.Credentials).WithOne(c => c.Client)
+                .HasForeignKey<Credentials>(c=>c.ClientId); 
+
+            //Initialization - Seed
+            modelBuilder.SeedAirplanes();
+            modelBuilder.SeedFligths();
+            modelBuilder.SeedCredentials();
+            modelBuilder.SeedClients();
 
         }
     }

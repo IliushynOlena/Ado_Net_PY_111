@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _05_EF_example;
 
-namespace _05_EF_example.Migrations
+namespace data_access_entity.Migrations
 {
     [DbContext(typeof(AirplanesDbContext))]
-    [Migration("20230220080453_AddRating")]
-    partial class AddRating
+    [Migration("20230227071111_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -122,7 +122,7 @@ namespace _05_EF_example.Migrations
                     b.Property<DateTime>("DepartureTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("Rating")
+                    b.Property<int>("Rating")
                         .HasColumnType("int");
 
                     b.HasKey("Number");
@@ -139,7 +139,8 @@ namespace _05_EF_example.Migrations
                             ArrivalCity = "Lviv",
                             ArrivalTime = new DateTime(2023, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DepartureCity = "Kyiv",
-                            DepartureTime = new DateTime(2023, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            DepartureTime = new DateTime(2023, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Rating = 10
                         },
                         new
                         {
@@ -148,7 +149,8 @@ namespace _05_EF_example.Migrations
                             ArrivalCity = "Lviv",
                             ArrivalTime = new DateTime(2023, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DepartureCity = "Warsaw",
-                            DepartureTime = new DateTime(2023, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            DepartureTime = new DateTime(2023, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Rating = 0
                         });
                 });
 

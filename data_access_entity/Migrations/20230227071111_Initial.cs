@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace _05_EF_example.Migrations
+namespace data_access_entity.Migrations
 {
     public partial class Initial : Migration
     {
@@ -28,7 +28,7 @@ namespace _05_EF_example.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FirstName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Birthdate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
@@ -46,6 +46,7 @@ namespace _05_EF_example.Migrations
                     ArrivalTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DepartureCity = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     ArrivalCity = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Rating = table.Column<int>(type: "int", nullable: false),
                     AirplaneId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -95,13 +96,13 @@ namespace _05_EF_example.Migrations
 
             migrationBuilder.InsertData(
                 table: "Flights",
-                columns: new[] { "Number", "AirplaneId", "ArrivalCity", "ArrivalTime", "DepartureCity", "DepartureTime" },
-                values: new object[] { 1, 1, "Lviv", new DateTime(2023, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "Kyiv", new DateTime(2023, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) });
+                columns: new[] { "Number", "AirplaneId", "ArrivalCity", "ArrivalTime", "DepartureCity", "DepartureTime", "Rating" },
+                values: new object[] { 1, 1, "Lviv", new DateTime(2023, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "Kyiv", new DateTime(2023, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), 10 });
 
             migrationBuilder.InsertData(
                 table: "Flights",
-                columns: new[] { "Number", "AirplaneId", "ArrivalCity", "ArrivalTime", "DepartureCity", "DepartureTime" },
-                values: new object[] { 2, 2, "Lviv", new DateTime(2023, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "Warsaw", new DateTime(2023, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) });
+                columns: new[] { "Number", "AirplaneId", "ArrivalCity", "ArrivalTime", "DepartureCity", "DepartureTime", "Rating" },
+                values: new object[] { 2, 2, "Lviv", new DateTime(2023, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "Warsaw", new DateTime(2023, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), 0 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_ClientFlight_FlightsNumber",

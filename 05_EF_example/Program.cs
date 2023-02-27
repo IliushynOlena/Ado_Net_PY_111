@@ -25,8 +25,8 @@ namespace _05_EF_example
 
             var client = context.Clients.Find(1);
             //Explicit data loading :Context.Entry(entity).Collection/Reference.Load
-            context.Entry(client).Collection(c => c.Flights).Load();
-            Console.WriteLine($" {client.Id}  {client.Name}  {client.Flights?.Count} flights");
+            //context.Entry(client).Collection(c => c.Flights).Load();
+           // Console.WriteLine($" {client.Id}  {client.Name}  {client.Flights?.Count} flights");
 
             //context.Clients.Add(new Client()
             //{
