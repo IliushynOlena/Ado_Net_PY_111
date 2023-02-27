@@ -17,9 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05_EF_example", "05_EF_exam
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08_ExampleEntity", "08_ExampleEntity\08_ExampleEntity.csproj", "{0364C8FD-0FBC-45EE-8ED7-04B98E0B2227}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "data_access_entity", "data_access_entity\data_access_entity.csproj", "{E062745A-1014-4DD1-9C57-A763082124AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "data_access_entity", "data_access_entity\data_access_entity.csproj", "{E062745A-1014-4DD1-9C57-A763082124AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_AirportProject", "06_AirportProject\06_AirportProject.csproj", "{E1A9FB7E-CABC-41AB-B8FC-B865C8C56524}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06_AirportProject", "06_AirportProject\06_AirportProject.csproj", "{E1A9FB7E-CABC-41AB-B8FC-B865C8C56524}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_console_using_repository", "09_console_using_repository\09_console_using_repository.csproj", "{810E889F-27B4-4827-80AF-52C633B1427F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{E1A9FB7E-CABC-41AB-B8FC-B865C8C56524}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1A9FB7E-CABC-41AB-B8FC-B865C8C56524}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1A9FB7E-CABC-41AB-B8FC-B865C8C56524}.Release|Any CPU.Build.0 = Release|Any CPU
+		{810E889F-27B4-4827-80AF-52C633B1427F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{810E889F-27B4-4827-80AF-52C633B1427F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{810E889F-27B4-4827-80AF-52C633B1427F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{810E889F-27B4-4827-80AF-52C633B1427F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
