@@ -14,6 +14,7 @@ namespace _05_EF_example
         public DbSet<Client> Clients { get; set; }
         public DbSet<Flight> Flights { get; set; }
         public DbSet<Airplane> Airpleins { get; set; }
+        public DbSet<ClientFlight> ClientFlight { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
@@ -57,8 +58,18 @@ namespace _05_EF_example
                 WithMany(a => a.Flights).
                 HasForeignKey(f=>f.AirplaneId);
 
-            modelBuilder.Entity<Flight>().HasMany(c => c.Clients).WithMany(c=>c.Flights);
+            //modelBuilder.Entity<Flight>().HasMany(c => c.Clients).WithMany(c=>c.Flights);
             //modelBuilder.Entity<Client>().HasMany(c => c.Flights).WithMany(f => f.Clients);
+            modelBuilder.Entity<ClientFlight>()
+            .HasKey(bc => new { bc.ClientId, bc.FlightId });
+            modelBuilder.Entity<ClientFlight>()
+                .HasOne(bc => bc.Client)
+                .WithMany(b => b.ClientFlight)
+                .HasForeignKey(bc => bc.ClientId);
+            modelBuilder.Entity<ClientFlight>()
+                .HasOne(bc => bc.Flight)
+                .WithMany(c => c.ClientFlight)
+                .HasForeignKey(bc => bc.FlightId);
 
             modelBuilder.Entity<Client>().HasOne(c => c.Credentials).WithOne(c => c.Client)
                 .HasForeignKey<Credentials>(c=>c.ClientId); 
@@ -68,6 +79,7 @@ namespace _05_EF_example
             modelBuilder.SeedFligths();
             modelBuilder.SeedCredentials();
             modelBuilder.SeedClients();
+            modelBuilder.SeedClientFlight();
 
         }
     }

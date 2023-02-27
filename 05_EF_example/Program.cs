@@ -13,20 +13,20 @@ namespace _05_EF_example
 
             //var filterColl = context.Flights.Where(f => f.ArrivalCity == "Lviv").OrderBy(f => f.DepartureTime);
             var filterColl = context.Flights
-                .Include(f=>f.Airplane)//Like Join to SQL
-                .Include(f=>f.Clients)//Like Join to SQL
+                .Include(f => f.Airplane)//Like Join to SQL
+                .Include(f => f.ClientFlight)//Like Join to SQL
                 .OrderBy(f => f.DepartureTime);
             foreach (var c in filterColl)
             {
                 Console.WriteLine($"Fligth : {c.Number} : from {c.DepartureCity} to {c.ArrivalCity}" +
                     $" - aiplane {c.Airplane?.Model}" +
-                    $" - with {c.Clients?.Count} passengers");
+                    $" - with {c.ClientFlight?.Count} passengers");
             }
 
-            var client = context.Clients.Find(1);
+            //var client = context.Clients.Find(1);
             //Explicit data loading :Context.Entry(entity).Collection/Reference.Load
             //context.Entry(client).Collection(c => c.Flights).Load();
-           // Console.WriteLine($" {client.Id}  {client.Name}  {client.Flights?.Count} flights");
+            // Console.WriteLine($" {client.Id}  {client.Name}  {client.Flights?.Count} flights");
 
             //context.Clients.Add(new Client()
             //{

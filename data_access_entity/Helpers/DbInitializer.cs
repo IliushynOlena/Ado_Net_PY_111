@@ -96,6 +96,23 @@ namespace _05_EF_example.Helpers
                 }
            });
         }
+        public static void SeedClientFlight(this ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ClientFlight>().HasData(new ClientFlight[]
+           {
+                new ClientFlight()
+                {
+                     ClientId = 1,
+                     FlightId = 1
+                    
+                },
+                 new ClientFlight()
+                {
+                    ClientId = 2,
+                    FlightId = 2
+                }
+           });
+        }
 
     }
 }

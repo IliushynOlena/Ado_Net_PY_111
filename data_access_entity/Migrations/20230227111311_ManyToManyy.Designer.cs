@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _05_EF_example;
 
 namespace data_access_entity.Migrations
 {
     [DbContext(typeof(AirplanesDbContext))]
-    partial class AirplanesDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230227111311_ManyToManyy")]
+    partial class ManyToManyy
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

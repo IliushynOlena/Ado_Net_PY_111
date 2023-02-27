@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _05_EF_example.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace data_access_entity.Entities
 {
-    //public class ClientFlight
-    //{
-    //    public int BookId { get; set; }
-    //    public Book Book { get; set; }
-    //    public int CategoryId { get; set; }
-    //    public Category Category { get; set; }
-    //}
+    public class ClientFlight
+    {
+        public int ClientId { get; set; }
+        public Client Client { get; set; }
+        public int FlightId { get; set; }
+        public Flight Flight { get; set; }
+    }
 }
