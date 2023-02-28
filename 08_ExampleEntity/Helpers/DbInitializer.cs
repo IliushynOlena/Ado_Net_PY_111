@@ -1,38 +1,20 @@
 ﻿using _05_EF_example.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _05_EF_example
+namespace _05_EF_example.Helpers
 {
-    public class AirplanesDbContext : DbContext
+    internal static class DbInitializer
     {
-        public AirplanesDbContext()
+        public static void SeedAirplanes(this ModelBuilder modelBuilder)
         {
-            //this.Database.EnsureDeleted();
-            //this.Database.EnsureCreated();
-        }
-        public DbSet<Client> Clients { get; set; }
-        public DbSet<Flight> Flights { get; set; }
-        public DbSet<Airplane> Airpleins { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-3HG9UVT\SQLEXPRESS;
-            Initial Catalog = SuperAirplanesDbWithMigration;
-            Integrated Security=True;Connect Timeout=30;
-            Encrypt=False;TrustServerCertificate=False;
-            ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-
-        }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-            //Initialization - Seed
-          modelBuilder.Entity<Airplane>().HasData(new Airplane[]
-          {
+            modelBuilder.Entity<Airplane>().HasData(new Airplane[]
+       {
                 new Airplane()
                 {
                     Id = 1,
@@ -45,9 +27,13 @@ namespace _05_EF_example
                     Model = "Boeing 352",
                     MaxPassangers = 1000
                 }
-          });
+       });
+
+        }
+        public static void SeedFligths(this ModelBuilder modelBuilder)
+        {
             modelBuilder.Entity<Flight>().HasData(new Flight[]
-            {
+          {
                 new Flight()
                 {
                     Number = 1,
@@ -66,8 +52,9 @@ namespace _05_EF_example
                     DepartureTime = new DateTime(2023,5,15),
                     ArrivalTime = new DateTime(2023,5,16)
                 }
-            });
-        }
-    }
+          });
 
+        }
+
+    }
 }
